@@ -25,7 +25,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/insta", {
 app.get("/", (req, res) => {
     res.send("Hello From Express Server.........");
 });
-
+// CRUD Operations
+// Create Operation
 app.post("/posts", (req, res) => {
     const dbStories =req.body
     Stories.create(dbStories, (err, data) => {
@@ -36,7 +37,7 @@ app.post("/posts", (req, res) => {
     })
 })
 
-
+// Read Operation
 app.get("/posts", (req, res) => {
     Stories.find((err, data) => {
         if(err)
