@@ -12,12 +12,12 @@ app.use(express.json());
 app.use(cors());
 
 // DB Config
-mongoose.connect("mongodb://127.0.0.1:27017/insta", {
+mongoose.connect("mongodb://mongo:27017/docker-node-mongo", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
-}).then ( () => console.log("Connection Successful"))
+}).then ( () => console.log("MongoDB Connected"))
 .catch ( (err) => console.log(err));
 
 
