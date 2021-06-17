@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 // Insta_Schema
 
-const instaSchema = new mongoose.Schema({
-    url: String,
-    user:String,
-    text: String,
-    views: String 
-});
+const storySchema = new mongoose.Schema({
+    story:{type: String},
+    userId:{type: mongoose.Schema.Types.ObjectId, ref:"User"},
+    views :{type: Number, default: 0}
+},
+{timestamps: true});
 
-const instaStories =  mongoose.model('instaStories', instaSchema);
+const instaStories =  mongoose.model('instaStories', storySchema);
 module.exports = instaStories
