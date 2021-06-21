@@ -13,7 +13,7 @@ dotenv.config();                        // to use .env variables
 const Port = process.env.Port;
 
 // DB Config
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect("mongodb://mongo:27017/docker-node-mongo", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
