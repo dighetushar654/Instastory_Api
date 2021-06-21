@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
 
-// Insta_Schema
-
 const storySchema = new mongoose.Schema({
-    story:{
-        type: String
-    },
     userId:{
         type: mongoose.Schema.Types.ObjectId, 
         ref:"User"
+    },
+    story:{
+        type: String,
     },
     views :{
         type: Number, 
@@ -17,5 +15,4 @@ const storySchema = new mongoose.Schema({
 },
 {timestamps: true});
 
-const instaStories =  mongoose.model('instaStories', storySchema);
-module.exports = instaStories
+module.exports = mongoose.model("Story", storySchema);
